@@ -1,0 +1,10 @@
+<!-- <p-dialog header="Title" [(visible)]="display">
+    Content
+</p-dialog>
+
+<button type="button" (click)="showDialog()" icon="pi pi-info-circle" label="Show"></button> -->
+<form  [formGroup]="Employ" >
+    <label> First Name </label><br> <br>
+    <input type="text"   pInputText required pattern="[a-z|A-Z' ']+$" formControlName="fname" /> &nbsp;<br>
+<span *ngIf="fname && fname.invalid">Wrong</span>
+</form>

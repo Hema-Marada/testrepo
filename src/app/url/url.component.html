@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="https://unpkg.com/primeflex@^3/primeflex.css">
+
+<link rel="stylesheet" href="https://unpkg.com/primeflex/themes/saga-blue.css">
+
+
+<form  [formGroup]="urlForm" (click)="loginUser()"  >
+
+    <div class="grid">
+        <div class="col-fixed" style="width:200px">
+            <p-dropdown  style="padding-bottom: 80px;padding-top: 30px;" [options]="lang"  placeholder="Select Method"  optionLabel="name" formControlName="method"></p-dropdown>
+                        <br> 
+            <span *ngIf="method && method.invalid && method.touched " style="color:red">Please Select Method</span>
+       
+       
+            <!-- <select required #method="ngModel" [class.is-invalid]="method.invalid && method.touched" class="custom-select" name="method" ngModel>
+                <option value="">
+                    select method
+                </option>
+                <option *ngFor="let method of methods">
+                    {{method}}
+                </option>
+                </select>
+                            <br> 
+                            <span class="text-danger" [class.d-none]="method.valid || method.untouched">Please Select Method</span> -->
+
+      
+        </div>
+        <div class="col" ><span class="p-float-label">
+            <input id="float-input" style="width:1250px" type="text" pInputText formControlName="url"> 
+            <label for="float-input">Enter Request URL</label>
+        </span>
+        <span *ngIf="url && url.invalid && url.touched" style="color:red">Please Enter Url</span>
+    </div>
+    </div>
+
+    <div class="col-6 col-offset-9">
+        <button pButton type="button"  (click)="addItem()" >Submit</button>&nbsp;&nbsp;
+        <button  pButton type="button"  (click)="reset()" >Reset</button>
+    </div>
+</form>
+
+<div class="col-md-8 mt-4 mb-4">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>
+                    Method
+                </th>
+                <th>
+                    Url
+                </th>
+                </tr>
+            </thead>
+                <tr *ngFor="let item of listData">
+                    <td><span>
+                        {{item.method}}
+                    </span>
+
+                    </td>
+                    <td><span>
+                        {{item.url}}
+                    </span>
+
+                    </td>
+                    
+                </tr>
+       

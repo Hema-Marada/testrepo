@@ -1,0 +1,12 @@
+<h1>ngSwitchCase Example</h1>
+<input type="text" pInputText placeholder="Enter Color"  [(ngModel)]="color">><br>
+
+<div [ngSwitch]="color">
+    <div *ngSwitchCase="'red'">You picked red color</div>
+    <div *ngSwitchCase="'blue'">You picked blue color</div>
+    <div *ngSwitchCase="'green'">You picked green color</div>
+      <div *ngSwitchDefault >Something wrong</div>
+    </div>
+    
+    
+    

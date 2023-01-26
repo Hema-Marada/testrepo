@@ -1,0 +1,75 @@
+<div class="userform">
+    <fieldset class="uform">
+<form  [formGroup]="loginForm" (click)="loginUser()" >
+   <h1 style="text-align:center;">LoginForm</h1><br><br>
+
+First Name : <input type="text"  placeholder="Enter First Name" pInputText required pattern="[a-zA-Z' ']+$" formControlName="fname" /> &nbsp;
+<span *ngIf="fname && fname.invalid && fname.touched" style="color:red">Please Enter Valid Name</span>
+
+
+
+Last Name : <input type="text"  placeholder="Enter Last Name" pInputText required pattern="[a-zA-Z' ']+$" formControlName="lname" [(ngModel)]="Value2"/> &nbsp;
+<span *ngIf="lname && lname.invalid && lname.touched" style="color:red">Please Enter Valid Name</span>
+
+
+Email : <input type="email" placeholder="Enter Email Id" pInputText required email formControlName="email" [(ngModel)]="Value3"/>
+<span *ngIf="email && email.invalid && email.touched" style="color:red">Please Enter Proper Email</span>&nbsp;<br><br><br><br>
+
+
+Select Gender   : &nbsp; 
+Male  <p-radioButton name="gender" value="Male" [(ngModel)]="Gender" formControlName="gender" [(ngModel)]="Value4"></p-radioButton>&nbsp;
+Female  <p-radioButton name="gender" value="Female" [(ngModel)]="Gender" formControlName="gender" [(ngModel)]="Value4"></p-radioButton>&nbsp;
+Others  <p-radioButton name="gender" value="Other" [(ngModel)]="Gender" formControlName="gender" [(ngModel)]="Value4"></p-radioButton><br><br><br><br>
+
+
+Phone No  : <input type="text" placeholder="Enter Your Phone No" pInputText required maxlength="10" pattern="[0-9]+$" formControlName="phoneNo" [(ngModel)]="Value7"/>
+<span *ngIf="phoneNo && phoneNo.invalid && phoneNo.touched" style="color:red">Please Enter 10 digit Number</span>&nbsp;
+
+
+Password : <input type="password" placeholder="Enter Password" pInputText  formControlName="password" [(ngModel)]="Value5" />&nbsp;
+<span *ngIf="password && password.invalid && password.touched" style="color:red">Please Enter Valid Password</span>
+
+
+Confirm Password : 
+<input type="password" placeholder="Enter Confirm Password" pInputText formControlName="confirmpassword" [(ngModel)]="Value6"/>
+<span *ngIf="confirmpassword && confirmpassword.invalid && confirmpassword.touched" style="color:red">Please Enter Valid Password</span>
+<span *ngIf=" password && confirmpassword && password.value!=confirmpassword.value" style="color:red">Password doesnot match</span><br>
+
+
+Languages Known: &nbsp;
+Telugu  <p-checkbox style="padding-top: 10%;" name="groupname" value="Telugu" [(ngModel)]="selectedValues" formControlName="languages" [(ngModel)]="Value8"></p-checkbox>&nbsp;&nbsp;&nbsp;&nbsp;
+ Hindi <p-checkbox name="groupname" value="Hindi" [(ngModel)]="selectedValues" formControlName="languages" [(ngModel)]="Value8"></p-checkbox> &nbsp;&nbsp;
+ English <p-checkbox name="groupname" value="English" [(ngModel)]="selectedValues" formControlName="languages" [(ngModel)]="Value8"></p-checkbox> 
+
+
+ <p-dropdown style= "padding-top: 40%; padding-bottom: 20%;padding-left: 15%;" [options]="lang" placeholder="Select a Language" optionLabel="name" [showClear]="true"> </p-dropdown>&nbsp;<br><br><br><br>
+
+
+ <span class="p-float-label">
+    <textarea id="float-input" rows="5" cols="30" pInputTextarea></textarea>
+    <label for="float-input">Summary</label>
+</span> <br><br><br><br>
+
+
+<button pButton type="button" [disabled]="loginForm.invalid"  >Submit</button>
+
+</form>
+</fieldset>
+
+</div>
+
+<div class="userdetails">
+
+
+<p>{{Value2}}</p>
+<p>{{Value3}}</p>
+<p>{{Value4}}</p>
+<p>{{Value5}}</p>
+<p>{{Value6}}</p>
+<p>{{Value7}}</p>
+<p>{{Value8}}</p>
+<p>{{Value9}}</p>
+
+</div>
+
+

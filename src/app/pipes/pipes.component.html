@@ -1,0 +1,13 @@
+<h1>
+    Date : {{dateToday}}<br>
+    Date Pipe : {{dateToday | date | uppercase}}<br>
+    Date Pipe : {{dateToday | date: 'short' | lowercase}}<br>
+    Name : {{name | uppercase}}<br>
+    Name : {{name | slice:4}}<br>
+    Currency Pipe: {{curency | currency}}<br>
+    Percent: {{dec | percent}}<br>
+    Slice: {{name | slice:(4)}}<br>
+    TitleCase: {{nam | titlecase}}
+</h1>
+
+<h1>The Reverse of the Name is {{"nvalue" | custompipe}}</h1>

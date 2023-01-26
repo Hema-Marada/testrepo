@@ -1,0 +1,15 @@
+<!-- <a routerLink="/topnav">topnav</a>
+<a routerLink="/url">url</a>
+<a routerLink="/contents">contents</a> -->
+<h1>ngStyle Example</h1>
+
+<ul>
+    <li *ngFor="let person of people"
+        [ngStyle]="{'color':'pink'}">
+{{person.name}} ({{person.City}})
+</li>
+    
+</ul>
+
+
+

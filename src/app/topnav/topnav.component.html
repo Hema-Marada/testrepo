@@ -1,0 +1,14 @@
+
+<form #loginForm="ngForm" (click)="loginUser(loginForm.value)">
+    <input type="text" pInputText required #name="ngModel" pattern="[a-zA-Z' ']+$" name="name" placeholder="Enter User Name"  ngModel>
+    <br><span *ngIf="name.invalid && name.touched" style="color:red">Please Enter Valid Input</span><br>
+    <input type="password" pInputText name="password" minlength="8" required #password="ngModel" placeholder="Enter Password" ngModel>
+    <br><span *ngIf="password.invalid && password.touched" style="color:red">Please Enter Valid Input</span><br>
+  <span *ngIf="name.value!=password.value" style="color:red">Password doesnot match</span><br>
+    <button pButton type="button" [disabled]="name.value!=password.value" >Submit</button>
+    
+  </form>
+  <p>
+  {{Value}}
+  </p> 
+
